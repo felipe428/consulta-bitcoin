@@ -1,1 +1,24 @@
-<h1>HTTPClient</h1>
+<header>
+  <b>Nome: </b> Felipe Santos da Silva
+  <br />
+  <b>RA: </b> 0050831921034
+</header>
+
+<h1>Bitcoin</h1>
+
+<table border="1">
+  <tr>
+    <th>Data/Hora</th>
+    <th>USD</th>
+    <th>BRL</th>
+  </tr>
+  <tr *ngFor="let rate of this.bitcoin.bitcoinRates">
+    <td>{{ rate.time.updated }}</td>
+    <td>
+      {{ rate.bpi.USD.rate_float }}
+    </td>
+    <td>
+      {{ rate.bpi.BRL.rate_float }}
+    </td>
+  </tr>
+</table>
