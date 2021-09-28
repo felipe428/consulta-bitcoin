@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { BitcoinService } from './bitcoin.service';
 import { TemporizadorService } from './temporizador.service';
 
@@ -10,12 +9,12 @@ import { TemporizadorService } from './temporizador.service';
 })
 export class AppComponent {
   constructor(
-    private http: HttpClient,
     public bitcoin: BitcoinService,
     public timer: TemporizadorService
   ) {}
 
   ngOnInit() {
+    this.bitcoin.updateBicoinRates();
     this.update();
   }
 
